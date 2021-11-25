@@ -84,6 +84,63 @@ public class LogicalOp {
         } return max;
     }
 
+    //Tema LISTS - OPTIONALA
+    //Cerinta 1
+    public List<Integer> optionala1(List<Integer> myList, int x, int y){
+        int temp;
+        int temp2;
+        for (int i = 0; i < myList.size(); i++) {
+            for (int j = 0; j < myList.size(); j++){
+                if(i == x && j == y){
+                    temp = myList.get(i);
+                    temp2 = myList.get(j);
+                    myList.add(j, temp);
+                    myList.add(i, temp2);
+                    myList.remove(x+2);
+                    myList.remove(y+1);
+                }
+            }
+        }
+        return myList;
+    }
+
+    //Cerinta 2 optionala
+    public List<Integer> opt2(List<Integer> x){
+        int temp;
+        for (int i = 0; i < x.size(); i++){
+            temp = x.get(i);
+            if (temp % 2 != 0){
+                x.remove(i);
+            }
+        }
+        return x;
+    }
+
+//    Cerinta 3 optionala
+    public List<Integer> opt3(List<Integer> x){
+        int temp;
+        int temp2;
+        int var;
+        int var2;
+
+        for (int i = 0; i < x.size(); i++){
+            for (int j = i+1; j < x.size(); j++){
+                temp = x.get(i);
+                temp2 = x.get(j);
+                if (temp > temp2){
+                    var = temp;
+                    var2 = temp2;
+                    x.add(i, temp2);
+                    x.add(j, var);
+                    x.remove(i+1);
+                    x.remove(j+1);
+                }
+            }
+        }
+        return x;
+    }
+
+
 
 
 
